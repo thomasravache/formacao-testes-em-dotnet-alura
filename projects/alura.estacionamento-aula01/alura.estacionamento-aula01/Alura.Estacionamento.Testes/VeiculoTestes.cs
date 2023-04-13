@@ -1,4 +1,5 @@
 using System;
+using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
 using Xunit;
 
@@ -30,6 +31,18 @@ namespace Alura.Estacionamento.Testes
 
             // Assert
             Assert.Equal(-150, veiculo.VelocidadeAtual);
+        }
+
+        [Fact]
+        public void TestaVeiculoTipo()
+        {
+            // Arrange
+            var veiculo = new Veiculo();
+
+            // Act
+
+            // Assert
+            Assert.Equal(TipoVeiculo.Automovel, veiculo.Tipo);
         }
     }
 }
