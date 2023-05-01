@@ -7,7 +7,9 @@ namespace Alura.Estacionamento.Testes
 {
     public class VeiculoTestes
     {
-        [Fact]
+        // Adicionar displayname para o nome do teste aparecer com um "apelido"
+        [Fact(DisplayName = "Teste Numero 1")]
+        [Trait("Funcionalidade", "Acelerar")] //
         public void TestaVeiculoAcelerar()
         {
             // Arrange
@@ -20,7 +22,8 @@ namespace Alura.Estacionamento.Testes
             Assert.Equal(100, veiculo.VelocidadeAtual);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Teste Numero 2")]
+        [Trait("Funcionalidade", "Acelerar")] // adicionar configuracoes que deixem a visualizacao mais agradavel e ajuda na performance de testes
         public void TestaVeiculoFrear()
         {
             // Arrange
@@ -43,6 +46,13 @@ namespace Alura.Estacionamento.Testes
 
             // Assert
             Assert.Equal(TipoVeiculo.Automovel, veiculo.Tipo);
+        }
+
+        // utilizar o parametro skip para pular testes por algum determinado motivo
+        [Fact(DisplayName = "Teste Numero 3", Skip="Teste ainda não implementado")]
+        public void ValidaNomeProprietario()
+        {
+            
         }
     }
 }
